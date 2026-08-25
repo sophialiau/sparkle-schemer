@@ -1,10 +1,3 @@
-// Grid-related types and interfaces
-
-// GridType
-// CellId
-// GridConfig
-// PaintMap
-
 export type GridType = "square" | "honeycomb";
 
 export type CellId = string;

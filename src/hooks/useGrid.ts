@@ -44,7 +44,9 @@ export function useGrid(initialConfig?: GridConfig): UseGridReturn {
   const setConfig = useCallback(
     (updater: GridConfig | ((c: GridConfig) => GridConfig)) => {
       setConfigState((prev) =>
-        typeof updater === "function" ? (updater as any)(prev) : updater
+        typeof updater === "function"
+          ? (updater as (config: GridConfig) => GridConfig)(prev)
+          : updater,
       );
       // paintMap will be wiped by the effect triggered from config change
     },
